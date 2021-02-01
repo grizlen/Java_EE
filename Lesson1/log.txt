@@ -1,0 +1,11 @@
+21:58:13,026 INFO  [org.jboss.as.repository] (management-handler-thread - 1) WFLYDR0001: Content added at location F:\WildFly\standalone\data\content\41\2d167389e5b21bf139a26fed7e79945bbcc6a1\content
+21:58:13,054 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0027: Starting deployment of "first-web-app.war" (runtime-name: "first-web-app.war")
+21:58:24,687 INFO  [org.infinispan.CONTAINER] (ServerService Thread Pool -- 8) ISPN000128: Infinispan version: Infinispan 'Corona Extra' 11.0.8.Final
+21:58:24,879 INFO  [org.infinispan.CONFIG] (MSC service thread 1-4) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+21:58:24,885 INFO  [org.infinispan.CONFIG] (MSC service thread 1-4) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+21:58:25,067 INFO  [org.infinispan.PERSISTENCE] (ServerService Thread Pool -- 8) ISPN000556: Starting user marshaller 'org.wildfly.clustering.infinispan.spi.marshalling.InfinispanProtoStreamMarshaller'
+21:58:25,265 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 8) WFLYCLINF0002: Started http-remoting-connector cache from ejb container
+21:58:25,399 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 81) WFLYUT0021: Registered web context: '/first-web-app' for server 'default-server'
+21:58:25,482 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0010: Deployed "first-web-app.war" (runtime-name : "first-web-app.war")
+22:04:26,076 INFO  [ru.geekbrains.FirstServlet] (default task-1) FirstServlet is initialized.
+22:04:26,077 INFO  [ru.geekbrains.FirstServlet] (default task-1) New request to FirstServlet.
