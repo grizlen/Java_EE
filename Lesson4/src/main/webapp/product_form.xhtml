@@ -1,0 +1,61 @@
+<html lang="en"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <title>Товар</title>
+</h:head>
+
+<h:body>
+    <div class="top">
+        <div class="container">
+            <h1 class="top-header">Товар</h1>
+            <ul class="nav-list">
+                <li><h:outputLink value="main.html">Главная</h:outputLink></li>
+                <li><h:outputLink value="product.xhtml">Товары</h:outputLink></li>
+                <li><h:outputLink value="cart.xhtml">Корзина</h:outputLink></li>
+                <li><a href="todo.xhtml">Заказ</a></li>
+                <li><a href="todo.xhtml">Категории товаров</a></li>
+                <li><a href="todo.xhtml">Пользователи</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container content">
+        <h:form>
+            <input type="hidden" id="id" name="id"/>
+            <div class="form-group">
+                <label>Name</label>
+                <h:inputText styleClass="form-control" id="name"
+                             value="#{mainController.product.name}"
+                             placeholder="Enter name"/>
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <h:inputText styleClass="form-control" id="description"
+                             value="#{mainController.product.description}"
+                             placeholder="Enter description"/>
+            </div>
+            <div class="form-group">
+                <label>Price</label>
+                <h:inputText p:type="number" styleClass="form-control" id="price"
+                             value="#{mainController.product.price}"
+                             placeholder="Enter price"/>
+            </div>
+            <h:commandButton value="Submit" styleClass="btn btn-primary"
+                             action="#{mainController.saveProduct()}"/>
+        </h:form>
+    </div>
+</h:body>
+
+</html>
