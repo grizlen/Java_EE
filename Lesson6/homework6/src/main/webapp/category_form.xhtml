@@ -1,0 +1,28 @@
+<html lang="en"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>Товар</title>
+</h:head>
+<h:body>
+    <ui:include src="WEB-INF\fragments\top.xhtml">
+        <ui:param name="title" value="Карточка категории товара"/>
+    </ui:include>
+
+    <div class="container content">
+        <h:form>
+            <input type="hidden" id="id" name="id"/>
+            <div>
+                <label>Name</label>
+                <h:inputText id="name" value="#{categoryController.category.name}" placeholder="Enter name" styleClass="form-control"/>
+            </div>
+            <h:commandButton value="Submit" action="#{categoryController.saveCategory()}" styleClass="btn btn-primary"/>
+        </h:form>
+    </div>
+</h:body>
+</html>
