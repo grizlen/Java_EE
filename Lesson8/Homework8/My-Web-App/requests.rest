@@ -1,0 +1,14 @@
+PUT http://127.0.0.1:8080/My-Web-App/api/v1/product
+
+@Content-Type: application/json
+
+{
+  "id": 5,
+  "categoryId": 1,
+  "description": "Product from REST 2",
+  "name": "Product from REST 2",
+  "prise": 200.00
+}
+
+%%%
+# Error: Entity may not be null

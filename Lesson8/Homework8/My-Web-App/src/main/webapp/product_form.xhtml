@@ -1,0 +1,44 @@
+<html lang="en"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>Товар</title>
+</h:head>
+<h:body>
+    <f:event listener="#{categoryController.preLoadCategories}" type="preRenderView"/>
+
+    <ui:include src="WEB-INF\fragments\top.xhtml">
+        <ui:param name="title" value="Карточка товара"/>
+    </ui:include>
+
+    <div class="container content">
+        <h:form>
+            <input type="hidden" id="id" name="id"/>
+            <div>
+                <label>Name</label>
+                <h:inputText id="name" value="#{productController.product.name}" placeholder="Enter name" styleClass="form-control"/>
+            </div>
+            <div>
+                <label>Category</label>
+                <h:selectOneListbox  size="1" id="productCategory" value="#{productController.product.categoryId}" styleClass="form-control">
+                    <f:selectItems value="#{categoryController.allCategories}" var="cat" itemValue="#{cat.id}" itemLabel="#{cat.name}"/>
+                </h:selectOneListbox>
+            </div>
+            <div>
+                <label>Description</label>
+                <h:inputText id="description" value="#{productController.product.description}" placeholder="Enter description" styleClass="form-control"/>
+            </div>
+            <div>
+                <label>Prise</label>
+                <h:inputText p:type="number" id="prise" value="#{productController.product.prise}" placeholder="Enter price" styleClass="form-control"/>
+            </div>
+            <h:commandButton value="Submit" action="#{productController.saveProduct()}" styleClass="btn btn-primary"/>
+        </h:form>
+    </div>
+</h:body>
+</html>

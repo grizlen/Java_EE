@@ -1,0 +1,32 @@
+<html lang="en"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>login</title>
+</h:head>
+<h:body>
+    <ui:include src="WEB-INF\fragments\top.xhtml">
+        <ui:param name="title" value="login"/>
+    </ui:include>
+    <div class="container content">
+        <form action="j_security_check" method="post">
+            <div class="form-group">
+                <h:outputLabel value="Login" for="j_username"/>
+                <h:inputText styleClass="form-control" id="j_username" name="j_username" placeholder="Enter login"
+                             required="true" requiredMessage="Login is required"/>
+            </div>
+            <div class="form-group">
+                <h:outputLabel value="Password" for="j_password"/>
+                <h:inputText p:type="password" styleClass="form-control" id="j_password" name="j_password"
+                             placeholder="Enter password" />
+            </div>
+            <button>Login</button>
+        </form>
+    </div>
+</h:body>
+</html>
