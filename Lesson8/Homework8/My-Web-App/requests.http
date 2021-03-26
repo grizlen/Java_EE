@@ -1,0 +1,59 @@
+GET http://127.0.0.1:8080/My-Web-App/api/v1/product
+
+###
+
+GET http://127.0.0.1:8080/My-Web-App/api/v1/product/1
+
+###
+
+GET http://127.0.0.1:8080/My-Web-App/api/v1/product/name/tovar
+
+###
+
+GET http://127.0.0.1:8080/My-Web-App/api/v1/product/count
+
+###
+
+GET http://127.0.0.1:8080/My-Web-App/api/v1/product/cat/1
+
+###
+
+GET http://127.0.0.1:8080/My-Web-App/api/v1/cat
+
+###
+
+GET http://127.0.0.1:8080/My-Web-App/api/v1/cat/1
+
+###
+
+POST http://127.0.0.1:8080/My-Web-App/api/v1/product
+
+@Content-Type: application/json
+
+{
+  "categoryId": 1,
+  "description": "Product from REST 3",
+  "name": "Product from REST",
+  "prise": 100.00
+}
+
+###
+
+PUT http://127.0.0.1:8080/My-Web-App/api/v1/product
+
+@Content-Type: application/json
+
+{
+  "id": 7,
+  "categoryId": 1,
+  "description": "Product from REST 3",
+  "name": "Product from REST 3",
+  "prise": 100.00
+}
+
+###
+
+DELETE http://127.0.0.1:8080/My-Web-App/api/v1/product/6
+
+###
+

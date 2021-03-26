@@ -1,0 +1,42 @@
+<html lang="en"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>User</title>
+</h:head>
+<h:body>
+    <f:event listener="#{userController.preLoadRoles}" type="preRenderView"/>
+
+    <ui:include src="/WEB-INF/fragments/top.xhtml">
+        <ui:param name="title" value="User roles"/>
+    </ui:include>
+
+    <div class="container content">
+        <h:form>
+            <input type="hidden" id="id" name="id"/>
+            <div>
+                <label>user: #{userController.user.login}</label>
+            </div>
+            <div>
+                <label>Roles:</label>
+                <h:dataTable value="#{userController.user.roles}" var="role" styleClass="table table-bordered my-2">
+                    <h:column>
+                        <f:facet name="header">name</f:facet>
+                        #{role.name}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Actions</f:facet>
+                        <h:commandButton value="добавить/удалить" styleClass="btn btn-success"/>
+                    </h:column>
+                </h:dataTable>
+            </div>
+            <h:commandButton value="Submit" action="#{userController.saveUser()}" styleClass="btn btn-primary"/>
+        </h:form>
+    </div>
+</h:body>
+</html>
